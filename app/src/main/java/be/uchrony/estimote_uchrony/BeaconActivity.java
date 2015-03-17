@@ -10,6 +10,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,22 +38,22 @@ public class BeaconActivity extends Activity{
     EditText major;
     EditText minor;
     EditText uuid;
-    TextView rssi;
     EditText txPower;
     EditText frequence;
+    ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_beacon_layout);
+        setContentView(R.layout.activity_beacon_custum_layout);
 
         batterie = (TextView) findViewById(R.id.batterie);
-        major = (EditText) findViewById(R.id.beacon_major);
-        minor = (EditText) findViewById(R.id.beacon_minor);
-        uuid = (EditText) findViewById(R.id.beacon_uuid);
-        rssi = (TextView) findViewById(R.id.beacon_rssi);
-        txPower = (EditText) findViewById(R.id.beacon_tx_power);
+        major = (EditText) findViewById(R.id.major);
+        minor = (EditText) findViewById(R.id.mineur);
+        uuid = (EditText) findViewById(R.id.uuid);
+        txPower = (EditText) findViewById(R.id.tx_power);
         frequence = (EditText) findViewById(R.id.frequence);
+        image = (ImageView) findViewById(R.id.beacon_connection);
 
         uuid.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -109,6 +110,7 @@ public class BeaconActivity extends Activity{
         }
     }
 
+    /*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -127,7 +129,7 @@ public class BeaconActivity extends Activity{
             beaconConnection.writeMinor(Integer.parseInt(minor.getText().toString()), fonctionCallBack());
         }
         return  true;
-    }
+    }*/
 
     private BeaconConnection.WriteCallback fonctionCallBack() {
         return new BeaconConnection.WriteCallback() {
@@ -155,17 +157,16 @@ public class BeaconActivity extends Activity{
 
 
     private void initConnection() {
-        final TextView etatConnection = (TextView) findViewById(R.id.etat_connection);
-        beaconConnection = new BeaconConnection(BeaconActivity.this,beacon,new BeaconConnection.ConnectionCallback() {
+         beaconConnection = new BeaconConnection(BeaconActivity.this,beacon,new BeaconConnection.ConnectionCallback() {
 
             @Override
             public void onAuthenticated(final BeaconConnection.BeaconCharacteristics beaconCharacteristics) {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        etatConnection.setText("Connection réussi");
                         Log.d("TAGR", "Connection réussi");
                         beaconCaract = beaconCharacteristics;
+                        image.setImageResource(R.drawable.success_logo);
                         miseAJourLayout();
                     }
                 });
@@ -176,8 +177,8 @@ public class BeaconActivity extends Activity{
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        etatConnection.setText("Connection échoué");
                         Log.d("TAGR", "Connection échoué");
+                        image.setImageResource(R.drawable.fail_logo);
                     }
                 });
             }
@@ -187,7 +188,6 @@ public class BeaconActivity extends Activity{
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        etatConnection.setText("Déconnection");
                         Log.d("TAGR","Déconnection");
                     }
                 });
@@ -211,7 +211,6 @@ public class BeaconActivity extends Activity{
         uuid.setText(beacon.getProximityUUID().toString());
         txPower.setText("" + beacon.getMeasuredPower());
         frequence.setText("" + beaconCaract.getAdvertisingIntervalMillis());
-        rssi.setText(""+beacon.getRssi());
         batterie.setText(beaconCaract.getBatteryPercent().toString()+" %");
     }
 

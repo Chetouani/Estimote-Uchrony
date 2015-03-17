@@ -211,7 +211,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/batterie"
+                android:id="@+id/beacon_batterie"
                 android:layout_weight="1"
                 android:gravity="end"
                 android:textColor="@color/White" />
@@ -237,7 +237,7 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/frequence"
+                android:id="@+id/beacon_frequence"
                 android:layout_weight="1"
                 android:gravity="end"
                 android:textColor="@color/Black"

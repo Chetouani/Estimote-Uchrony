@@ -55,20 +55,23 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="34dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="UUID"
                     android:id="@+id/textView4"
-                    android:layout_weight="0.06"
-                    android:gravity="center_vertical|center|center_horizontal" />
+                    android:gravity="center_vertical|center|center_horizontal"
+                    android:layout_weight="5" />
 
                 <EditText
-                    android:layout_width="291dp"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/uuid"
                     android:layout_gravity="right"
-                    android:textSize="15dp" />
+                    android:textSize="13dp"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:gravity="right" />
 
             </LinearLayout>
 
@@ -78,21 +81,23 @@
                 android:layout_height="wrap_content" >
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="34dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="MAJOR"
                     android:id="@+id/textView5"
-                    android:layout_weight="0.06"
+                    android:layout_weight="5"
                     android:gravity="center_vertical|center|center_horizontal" />
 
                 <EditText
-                    android:layout_width="291dp"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/major"
                     android:layout_gravity="right"
                     android:textSize="15dp"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:gravity="right" />
             </LinearLayout>
 
             <LinearLayout
@@ -101,21 +106,23 @@
                 android:layout_height="wrap_content" >
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="34dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="MINOR"
                     android:id="@+id/textView6"
-                    android:layout_weight="0.06"
+                    android:layout_weight="5"
                     android:gravity="center_vertical|center|center_horizontal" />
 
                 <EditText
-                    android:layout_width="291dp"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/mineur"
                     android:layout_gravity="right"
                     android:textSize="15dp"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:gravity="right" />
             </LinearLayout>
 
             <LinearLayout
@@ -124,21 +131,24 @@
                 android:layout_height="wrap_content" >
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="34dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="TxPower"
                     android:id="@+id/textView7"
-                    android:layout_weight="0.06"
-                    android:gravity="center_vertical|center|center_horizontal" />
+                    android:layout_weight="5"
+                    android:gravity="center_vertical|center|center_horizontal"
+                    android:textSize="11dp" />
 
                 <EditText
-                    android:layout_width="291dp"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/tx_power"
                     android:layout_gravity="right"
                     android:textSize="15dp"
-                    android:inputType="numberSigned" />
+                    android:inputType="numberSigned"
+                    android:layout_weight="1"
+                    android:gravity="right" />
             </LinearLayout>
 
             <LinearLayout
@@ -147,22 +157,24 @@
                 android:layout_height="wrap_content" >
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="34dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="Fréquence"
                     android:id="@+id/textView8"
-                    android:layout_weight="0.06"
+                    android:layout_weight="5"
                     android:gravity="center_vertical|center|center_horizontal"
-                    android:textSize="13dp" />
+                    android:textSize="11dp" />
 
                 <EditText
-                    android:layout_width="291dp"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/frequence"
                     android:layout_gravity="right"
                     android:textSize="15dp"
-                    android:inputType="numberSigned" />
+                    android:inputType="numberSigned"
+                    android:layout_weight="1"
+                    android:gravity="right" />
             </LinearLayout>
 
             <TextView
@@ -180,21 +192,22 @@
                 android:layout_height="wrap_content" >
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="34dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="Batterie"
                     android:id="@+id/textView10"
-                    android:layout_weight="0.06"
+                    android:layout_weight="5"
                     android:gravity="center_vertical|center|center_horizontal" />
 
                 <TextView
-                    android:layout_width="291dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
                     android:id="@+id/batterie"
                     android:layout_gravity="right"
                     android:textSize="15dp"
-                    android:gravity="center_vertical|center|center_horizontal" />
+                    android:gravity="center_vertical|center|center_horizontal|right"
+                    android:layout_weight="1" />
             </LinearLayout>
 
         </LinearLayout>
