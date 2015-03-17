@@ -48,55 +48,8 @@
                 android:id="@+id/etat_connection"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:textColor="@color/White" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nom : "
-                android:textStyle="bold"
-                android:layout_weight="1"
-                android:textColor="@color/Black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/beacon_nom"
-                android:layout_weight="1"
-                android:gravity="end"
-                android:textColor="@color/Black" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/Black">
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Distance : "
-                android:textStyle="bold"
-                android:layout_weight="1"
-                android:textColor="@color/White" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/distance"
-                android:layout_weight="1"
-                android:gravity="end"
-                android:textColor="@color/White" />
+                android:textColor="@color/White"
+                android:clickable="false" />
         </LinearLayout>
 
         <LinearLayout
@@ -111,15 +64,21 @@
                 android:text="UUID : "
                 android:textStyle="bold"
                 android:layout_weight="1"
-                android:textColor="@color/Black" />
+                android:textColor="@color/Black"
+                android:layout_gravity="bottom" />
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/beacon_uuid"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:textColor="@color/Black" />
+                android:textColor="@color/Black"
+                android:clickable="false"
+                android:nestedScrollingEnabled="true"
+                android:layout_gravity="bottom"
+                android:singleLine="true"
+                android:textSize="15dp" />
 
         </LinearLayout>
 
@@ -136,15 +95,19 @@
                 android:text="Major : "
                 android:textStyle="bold"
                 android:layout_weight="1"
-                android:textColor="@color/White" />
+                android:textColor="@color/White"
+                android:layout_gravity="bottom" />
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/beacon_major"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:textColor="@color/White" />
+                android:textColor="@color/White"
+                android:layout_gravity="bottom"
+                android:inputType="number"
+                android:textIsSelectable="false" />
 
         </LinearLayout>
 
@@ -161,15 +124,18 @@
                 android:text="Minor : "
                 android:textStyle="bold"
                 android:layout_weight="1"
-                android:textColor="@color/Black" />
+                android:textColor="@color/Black"
+                android:layout_gravity="bottom" />
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/beacon_minor"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:textColor="@color/Black" />
+                android:textColor="@color/Black"
+                android:layout_gravity="bottom"
+                android:inputType="number" />
 
         </LinearLayout>
 
@@ -183,18 +149,22 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MAC addresse : "
+                android:text="TxPower : "
                 android:textStyle="bold"
                 android:layout_weight="1"
-                android:textColor="@color/White" />
+                android:textColor="@color/White"
+                android:layout_gravity="bottom"
+                android:background="@color/Black" />
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/mac_adresse"
+                android:id="@+id/beacon_tx_power"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:textColor="@color/White" />
+                android:textColor="@color/White"
+                android:layout_gravity="bottom"
+                android:inputType="numberSigned" />
 
         </LinearLayout>
 
@@ -208,7 +178,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Niveau de batterie : "
+                android:text="Rssi : "
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:textColor="@color/Black" />
@@ -216,7 +186,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/batterie"
+                android:id="@+id/beacon_rssi"
                 android:layout_weight="1"
                 android:gravity="end"
                 android:textColor="@color/Black" />
@@ -233,7 +203,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rssi : "
+                android:text="Niveau de batterie : "
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:textColor="@color/White" />
@@ -241,7 +211,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/beacon_rssi"
+                android:id="@+id/batterie"
                 android:layout_weight="1"
                 android:gravity="end"
                 android:textColor="@color/White" />
@@ -252,24 +222,27 @@
             android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@color/White" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TxPower : "
+                android:text="Fréquence : "
                 android:textStyle="bold"
                 android:layout_weight="1"
-                android:textColor="@color/Black" />
+                android:textColor="@color/Black"
+                android:layout_gravity="bottom" />
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/beacon_tx_power"
+                android:id="@+id/frequence"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:textColor="@color/Black" />
-
+                android:textColor="@color/Black"
+                android:layout_gravity="bottom"
+                android:inputType="number" />
         </LinearLayout>
 
     </LinearLayout>
